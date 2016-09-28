@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,7 +54,9 @@ namespace CircularPrime
         }
         static void Main(string[] args)
         {
+            Stopwatch sw = Stopwatch.StartNew();
             int[] result =  FindCirclPrime(1000000);
+            sw.Stop();
             for (int i = 0; i < result.Length; i++)
             {
                 if (i % 5 == 0)
@@ -62,6 +65,7 @@ namespace CircularPrime
                 
             }
             Console.WriteLine($"conunt = {result.Length}");
+            Console.WriteLine($"tickes = {sw.ElapsedMilliseconds}");
             Console.ReadLine();
             }
 
